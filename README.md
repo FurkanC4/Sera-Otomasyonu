@@ -7,3 +7,7 @@ Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdı
 - https://www.tutorialspoint.com/flask/flask_sqlite.htm
 - https://medium.com/@aliciagilbert.itsimplified/a-slick-crud-application-built-using-python-with-flask-and-sqlite3-to-teach-simple-mysql-queries-bd75e1109582
 ## Kullanılan Kütüphaneler
+-from EmulatorGUI import GPIO
+-import RPi.GPIO as GPIO
+-import time
+-import traceback
