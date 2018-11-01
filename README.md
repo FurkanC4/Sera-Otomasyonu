@@ -9,6 +9,5 @@ Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdı
 ## Kullanılan Kütüphaneler
 - from EmulatorGUI import GPIO
 - import RPi.GPIO as GPIO
-- import time
 - import traceback
-- time Modülü
+- time modülü
