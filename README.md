@@ -11,3 +11,4 @@ Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdı
 - import RPi.GPIO as GPIO
 - import time
 - import traceback
+- time Modülü
