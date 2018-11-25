@@ -12,15 +12,86 @@ def Sıcaklıknormalguncelle():
     
     cursor.execute("SELECT * FROM sera ")
     data=cursor.fetchall()
-    print("ilk deger---")
+    cursor.execute("UPDATE sera SET deger=30 WHERE isim='Sıcaklık'")
+    cursor.execute("UPDATE sera SET Durum='Normal' WHERE isim='Sıcaklık'")
+    print("SOn deger---")
     for i in data:
         print(i)
-        cursor.execute("UPDATE sera SET deger=30 WHERE isim='Sıcaklık'")
-        cursor.execute("UPDATE sera SET Durum='Normal' WHERE isim='Sıcaklık'")
+        con.commit()
+def Sıcaklıkdikkatguncelle():
+    
+    cursor.execute("SELECT * FROM sera ")
+    data=cursor.fetchall()
+    cursor.execute("UPDATE sera SET deger=45 WHERE isim='Sıcaklık'")
+    cursor.execute("UPDATE sera SET Durum='Dikkat' WHERE isim='Sıcaklık'")
+    print("SOn deger---")
+    for i in data:
+        print(i)
+        con.commit()
+        
+def Nemnormalguncelle():
+    
+    cursor.execute("SELECT * FROM sera ")
+    data=cursor.fetchall()
 
-        print("SOn deger---")
+    cursor.execute("UPDATE sera SET deger=50 WHERE isim='Nem'")
+    cursor.execute("UPDATE sera SET Durum='Normal' WHERE isim='Nem'")
+    print("SOn deger---")
     for i in data:
         print(i)
+        con.commit()
+
+def Nemdikkatguncelle():
+    
+    cursor.execute("SELECT * FROM sera")
+    data=cursor.fetchall()
+    cursor.execute("UPDATE sera SET deger=3 WHERE isim='Nem'")
+    cursor.execute("UPDATE sera SET Durum='Dikkat' WHERE isim='Nem'")
+    print("SOn deger---")
+    for i in data:
+        print(i)
+        con.commit()
+def Motordurguncelle():
+    
+    cursor.execute("SELECT * FROM sera ")
+    data=cursor.fetchall()
+    cursor.execute("UPDATE sera SET deger=0 WHERE isim='Motor'")
+    cursor.execute("UPDATE sera SET Durum='Duruyor' WHERE isim='Motor'")
+    print("SOn deger---")
+    for i in data:
+        print(i)
+        con.commit()
+def Motorcalısguncelle():
+    
+    cursor.execute("SELECT * FROM sera ")
+    data=cursor.fetchall()
+    cursor.execute("UPDATE sera SET deger=1 WHERE isim='Motor'")
+    cursor.execute("UPDATE sera SET Durum='Calısıyor' WHERE isim='Motor'")
+    print("SOn deger---")
+    for i in data:
+        print(i)
+        con.commit()
+
+def Sudurguncelle():
+    
+    cursor.execute("SELECT * FROM sera ")
+    data=cursor.fetchall()
+    cursor.execute("UPDATE sera SET deger=0 WHERE isim='Su Pompası'")
+    cursor.execute("UPDATE sera SET Durum='Duruyor' WHERE isim='Su Pompası'")
+    print("SOn deger---")
+    for i in data:
+        print(i)
+        con.commit()
+def Sucalısguncelle():
+    
+    cursor.execute("SELECT * FROM sera ")
+    data=cursor.fetchall()
+    cursor.execute("UPDATE sera SET deger=1 WHERE isim='Su Pompası'")
+    cursor.execute("UPDATE sera SET Durum='Calısıyor' WHERE isim='Su Pompası'")
+    print("SOn deger---")
+    for i in data:
+        print(i)
+        con.commit()
 
 def Main():
   
@@ -48,24 +119,30 @@ def Main():
 
               print("Su Veriliyor...")
               GPIO.output(4,GPIO.LOW)
-              time.sleep(3)
+              Sucalısguncelle()
+              time.sleep(7)
               print("NEm Normale döndü..")
               GPIO.output(19,GPIO.LOW)
-              time.sleep(2)
+              Nemnormalguncelle()
+              time.sleep(5)
               GPIO.output(4,GPIO.HIGH)
               print("Su Kapatıldı..")
+              Sudurguncelle()
               time.sleep(1)
-              Sıcaklıknormalguncelle()
+        
 
             if (GPIO.input(18) == True):
               print("Motor Açık, Hava Üfleniyor..")
               GPIO.output(17,GPIO.LOW)
-              time.sleep(3)
+              Motorcalısguncelle()
+              time.sleep(7)
               print("Sıcaklık Normale döndü..")
+              Sıcaklıknormalguncelle()
               GPIO.output(9,GPIO.LOW)
-              time.sleep(2)
+              time.sleep(5)
               GPIO.output(17,GPIO.HIGH)
               print("Motor Kapatıldı..")
+              Motordurguncelle()
               time.sleep(1)
           
               
@@ -78,24 +155,28 @@ def Main():
             if (GPIO.input(25) == True):
               print("Sıcaklık 36 derece altı (Normal)..")
               GPIO.output(9,GPIO.LOW)
+              Sıcaklıknormalguncelle()
               time.sleep(1)
               
             if (GPIO.input(8) == True):
               print("Sıcaklık 36 derece üstü DİKKAT!..")
               GPIO.output(9,GPIO.HIGH)
+              Sıcaklıkdikkatguncelle()
               time.sleep(1)
 
             if (GPIO.input(16) == True):
               print("Nem (Normal)..")
               GPIO.output(19,GPIO.LOW)
+              Nemnormalguncelle()
               time.sleep(1)
               
             if (GPIO.input(20) == True):
               print("Nem çok azaldı. Su veriniz.")
               GPIO.output(19,GPIO.HIGH)
+              Nemdikkatguncelle()
               time.sleep(1)
               
-
+        con.close()
     except Exception as ex:
         traceback.print_exc()
     finally:
