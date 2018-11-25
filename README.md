@@ -10,4 +10,5 @@ Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdı
 - from EmulatorGUI import GPIO
 - import RPi.GPIO as GPIO
 - import traceback
-- time modülü
+- import time
+- import sqlite3
