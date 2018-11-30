@@ -17,3 +17,5 @@ Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdı
 - import traceback
 - import time
 - import sqlite3
+- from flask import Flask, render_template, request
+- import sqlite3 as sql
