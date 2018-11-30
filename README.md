@@ -1,5 +1,8 @@
 # Sera Otomasyonu
 Raspberry Pi üzerinde Python ve Flask ile sera yönetim sistemi
+# Kurulum Ve Kullanım
+İlk olarak run.py adlı dosyayı python üzerinden çalıştırarak web sitemizi localhost:5000 üzerinde aktif ediniz.
+Hemen sonra sera.py dosyasını python üzerinde çalıştırarak EmulatorGUI'yi aktif ediniz. Göreceğiniz üzere emulatör üzerindeki değişiklikler ile web üzerinden sqlite3 ile veri alış-verişi başarıyla sağlanacaktır.
 
 ## Kullanılan Kaynaklar
 Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdığımız 3 farkı web sitesi kaynak olarak kullanılıyor. Tüm site ve kaynak bilgilerine aşağıdaki linklerden ulaşabilirsiniz.
