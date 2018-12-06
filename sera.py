@@ -117,7 +117,7 @@ def Main():
       
             if (GPIO.input(14) == True):
 
-              print("Su Veriliyor...")
+              print("Su Veriliyor..")
               GPIO.output(4,GPIO.LOW)
               Sucalısguncelle()
               time.sleep(7)
