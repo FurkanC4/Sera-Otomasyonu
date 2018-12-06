@@ -19,7 +19,7 @@ Hemen sonra sera.py dosyasını python üzerinde çalıştırarak EmulatorGUI'yi
 - HTML
 
 ## Sistem bileşen diyagramı
-![](images/Sistem_bileşen_diyagramı)
+![](images/Sistem-bileşen-diyagramı)
 
 ## Kullanılan Kaynaklar
 Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdığımız 3 farkı web sitesi kaynak olarak kullanılıyor. Tüm site ve kaynak bilgilerine aşağıdaki linklerden ulaşabilirsiniz.
