@@ -13,7 +13,7 @@ def my_link():
    cur = con.cursor()
    cur.execute("UPDATE sera SET Durum='Kapalı' WHERE isim='Motor'")
    cur.execute("UPDATE sera SET Durum='Kapalı' WHERE isim='Sıcaklık'")
-   cur.execute("UPDATE sera SET deger='00000' WHERE isim='Sıcaklık'")
+   cur.execute("UPDATE sera SET deger='000000' WHERE isim='Sıcaklık'")
    cur.execute("UPDATE sera SET Durum='Kapalı' WHERE isim='Nem'")
    cur.execute("UPDATE sera SET deger='000000' WHERE isim='Nem'")
    cur.execute("UPDATE sera SET Durum='Kapalı' WHERE isim='Su Pompası'")
@@ -65,3 +65,4 @@ def list():
 
 if __name__ == '__main__':
    app.run(debug = True)
+
