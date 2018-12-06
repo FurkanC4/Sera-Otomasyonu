@@ -36,3 +36,22 @@ Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdı
 - import sqlite3
 - from flask import Flask, render_template, request
 - import sqlite3 as sql
+
+## Projenin uygulama aşamaları
+- Proje içi sırasıyla aşığıdaki gibidir. (Sürekli güncellenecektir.)
+1) İlk olarak python ile sqlite3 bağlantısı yapılmaya çalışılıp veri tabanı üzerinde güncelleme işlemi yapılmaya çalışıldı. Ve yapıldı.
+2) HTML sayfaları oluşturuldu ve görselleme arayüzü yapıldı.
+3) Python kullanılarak Emulatör üzerindeki butonlar ile veri tabanı güncellemesi yapıldı.
+4) Python dosyası ile HTML sayfasına veri göndermesi sağlandı.
+5) En çok zorlanılan konu ise bu verileri tabloda istenilen yerlereyazmak oldu ve yerleştirmeye çalışmatı. Üstesinden ise bir "for" dönüsü ile .py uzantılı dosyadan veri çekmeyle gelindi.
+6) En son html sayfalarına görüntüler eklenerek daha güzel bir görünüm sağlandı.
+7) Şu an için her şey tamam fakat "Sera Resmi" üzerinde tablolara ilgili yerlere gelinmemektedir. Bu işlem biraz zaman alabilir. (üzerinde çalışılıyor.)
+### Uygulama İçi Görüntüler
+- Giriş Sayfası
+![](images/sera1.PNG)
+- İlk standart durumlar
+![](images/sera2.PNG)
+- Sıcaklık değerini emulatörden değiştirdikten sonraki durum
+![](images/sera3.PNG)
+- Sera Görselleme
+![](images/sera4.PNG)
