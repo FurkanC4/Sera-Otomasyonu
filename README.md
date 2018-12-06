@@ -1,8 +1,25 @@
 # Sera Otomasyonu
-Raspberry Pi üzerinde Python ve Flask ile sera yönetim sistemi
+Raspberry Pi üzerinde Python ve Flask ile sera yönetim sistemi,
+
+## Projenin Genel Tanımı Ve Amacı
+Sera otomasyonu ile kullanmak isteyen ilgili kişinin serasını web üzerinden kontrol etmesini sağlamak için geliştirilmiş, python kullanılarak oluşturulmuş emulatör ile kontrol edilmiş porjedir.
+
 # Kurulum Ve Kullanım
 İlk olarak run.py adlı dosyayı python üzerinden çalıştırarak web sitemizi localhost:5000 üzerinde aktif ediniz.
 Hemen sonra sera.py dosyasını python üzerinde çalıştırarak EmulatorGUI'yi aktif ediniz. Göreceğiniz üzere emulatör üzerindeki değişiklikler ile web üzerinden sqlite3 ile veri alış-verişi başarıyla sağlanacaktır.
+
+# Kullanılan Teknolojiler
+- Python
+- Windows 10 / (İstenirse Ubuntu üzerinden yapabilir. )
+- Visual Studio Code
+- Php
+- JavaSctript
+- Sqlite3
+- Flask-Sqlalchemy
+- HTML
+
+## Sistem bileşen diyagramı
+![](images/Sistem_bileşen_diyagramı)
 
 ## Kullanılan Kaynaklar
 Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdığımız 3 farkı web sitesi kaynak olarak kullanılıyor. Tüm site ve kaynak bilgilerine aşağıdaki linklerden ulaşabilirsiniz.
