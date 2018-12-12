@@ -37,6 +37,9 @@ Daha çok internet tabanlı bir araştırma ile gittiğim için kararlaştırdı
 - from flask import Flask, render_template, request
 - import sqlite3 as sql
 
+## Proje Gerçeklemesi Hakkında
+Projemiz simülasyon ve web tabanlı işleme olması dolayısıyla gerçeklemeye dökmeyeceğiz. Fakat gerçek bir Raspberry Pi üzerinde kurmak ve uygulamak isteyen kişiler sera.py içerisindeki from EmulatorGUI import GPIO kütüphanesini silerek yerine #import RPi.GPIO as GPIO kütüphanesini eklemeli ve Rasberry Pi içerisine uygun şekilde aktarmalıdır.
+
 ## Projenin uygulama aşamaları
 - Proje içi sırasıyla aşığıdaki gibidir. (Sürekli güncellenecektir.)
 1) İlk olarak python ile sqlite3 bağlantısı yapılmaya çalışılıp veri tabanı üzerinde güncelleme işlemi yapılmaya çalışıldı. Ve yapıldı.
