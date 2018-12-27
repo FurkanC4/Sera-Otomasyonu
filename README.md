@@ -53,8 +53,13 @@ Projemiz simülasyon ve web tabanlı işleme olması dolayısıyla gerçeklemeye
 - Giriş Sayfası
 ![](images/sera1.PNG)
 - İlk standart durumlar
-![](images/sera2.PNG)
+![](images/SERA2.PNG)
 - Sıcaklık değerini emulatörden değiştirdikten sonraki durum
 ![](images/sera3.PNG)
+- Elektrik Ver Butonu İle Veri tabanına etki etme
+![](images/sera5.PNG)
+- Motor Çalıştır Butonu İle Veri tabanına etki etme
+![](images/sera6.PNG)
 - Sera Görselleme
-![](images/sera4.PNG)
+![](images/SERA2.PNG)
+
