@@ -59,7 +59,7 @@ Projemiz simülasyon ve web tabanlı işleme olması dolayısıyla gerçeklemeye
 - Elektrik Ver Butonu İle Veri tabanına etki etme
 ![](images/sera5.PNG)
 - Motor Çalıştır Butonu İle Veri tabanına etki etme
-![](images/sera6.PNG)
+![](images/sera66.PNG)
 - Sera Görselleme
 ![](images/SERA2.PNG)
 
