@@ -14,21 +14,22 @@ def Sıcaklıknormalguncelle():
     data=cursor.fetchall()
     cursor.execute("UPDATE sera SET deger=30 WHERE isim='Sıcaklık'")
     cursor.execute("UPDATE sera SET Durum='Normal' WHERE isim='Sıcaklık'")
-    print("SOn deger---")
-    for i in data:
-        print(i)
-        con.commit()
+    con.commit()
 def Sıcaklıkdikkatguncelle():
     
-    cursor.execute("SELECT * FROM sera ")
+    cursor.execute("SELECT deger FROM sera ")
     data=cursor.fetchall()
     cursor.execute("UPDATE sera SET deger=45 WHERE isim='Sıcaklık'")
     cursor.execute("UPDATE sera SET Durum='Dikkat' WHERE isim='Sıcaklık'")
-    print("SOn deger---")
-    for i in data:
-        print(i)
-        con.commit()
-        
+    con.commit()
+
+def hadi():
+
+    cursor.execute("SELECT deger FROM sera WHERE isim='Motor' ")
+    data=cursor.fetchall()
+    con.commit()
+    return data
+
 def Nemnormalguncelle():
     
     cursor.execute("SELECT * FROM sera ")
@@ -42,7 +43,6 @@ def Nemnormalguncelle():
         con.commit()
 
 def Nemdikkatguncelle():
-    
     cursor.execute("SELECT * FROM sera")
     data=cursor.fetchall()
     cursor.execute("UPDATE sera SET deger=3 WHERE isim='Nem'")
@@ -51,8 +51,9 @@ def Nemdikkatguncelle():
     for i in data:
         print(i)
         con.commit()
+
 def Motordurguncelle():
-    
+ 
     cursor.execute("SELECT * FROM sera ")
     data=cursor.fetchall()
     cursor.execute("UPDATE sera SET deger=0 WHERE isim='Motor'")
@@ -63,14 +64,10 @@ def Motordurguncelle():
         con.commit()
 def Motorcalısguncelle():
     
-    cursor.execute("SELECT * FROM sera ")
+    print (cursor.execute("SELECT deger FROM sera where isim='Motor'"))
     data=cursor.fetchall()
     cursor.execute("UPDATE sera SET deger=1 WHERE isim='Motor'")
     cursor.execute("UPDATE sera SET Durum='Calısıyor' WHERE isim='Motor'")
-    print("SOn deger---")
-    for i in data:
-        print(i)
-        con.commit()
 
 def Sudurguncelle():
     
@@ -114,7 +111,22 @@ def Main():
         GPIO.setup(19, GPIO.OUT, initial=GPIO.LOW)  # Nem kontrol
     
         while(True):
-      
+            data= hadi()
+          
+            if(data==[(1,)]):
+              print("Motor Açık, Hava Üfleniyor..")
+              GPIO.output(17,GPIO.LOW)
+              Motorcalısguncelle()
+              time.sleep(7)
+              print("Sıcaklık Normale döndü..")
+              Sıcaklıknormalguncelle()
+              GPIO.output(9,GPIO.LOW)
+              time.sleep(5)
+              GPIO.output(17,GPIO.HIGH)
+              print("Motor Kapatıldı..")
+              Motordurguncelle()
+              time.sleep(1)
+           
             if (GPIO.input(14) == True):
 
               print("Su Veriliyor..")
@@ -175,6 +187,8 @@ def Main():
               GPIO.output(19,GPIO.HIGH)
               Nemdikkatguncelle()
               time.sleep(1)
+      
+                    
               
         con.close()
     except Exception as ex:

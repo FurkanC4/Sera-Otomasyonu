@@ -8,18 +8,32 @@ app = Flask(__name__)
 
 @app.route('/my-link/')
 def my_link():
-   con =sqlite3.connect("degerler.db");1
+   con =sqlite3.connect("degerler.db");
    
    cur = con.cursor()
    cur.execute("UPDATE sera SET Durum='Kapalı' WHERE isim='Motor'")
+   cur.execute("UPDATE sera SET deger='0' WHERE isim='Motor'")
    cur.execute("UPDATE sera SET Durum='Kapalı' WHERE isim='Sıcaklık'")
-   cur.execute("UPDATE sera SET deger='000000' WHERE isim='Sıcaklık'")
+   cur.execute("UPDATE sera SET deger='0' WHERE isim='Sıcaklık'")
    cur.execute("UPDATE sera SET Durum='Kapalı' WHERE isim='Nem'")
-   cur.execute("UPDATE sera SET deger='000000' WHERE isim='Nem'")
+   cur.execute("UPDATE sera SET deger='0' WHERE isim='Nem'")
    cur.execute("UPDATE sera SET Durum='Kapalı' WHERE isim='Su Pompası'")
+   cur.execute("UPDATE sera SET deger='0' WHERE isim='Su Pompası'")
 
    con.commit()
    return "Başarılı Elektrik Kesildi !"
+
+@app.route('/my-link2/')
+def my_link2():
+   con =sqlite3.connect("degerler.db");
+   
+   cur = con.cursor()
+   cur.execute("UPDATE sera SET Durum='Calısıyor' WHERE isim='Motor'")
+   cur.execute("UPDATE sera SET Deger='1' WHERE isim='Motor'")
+
+   con.commit()
+   return "Motorunuz Çalışıyor Emulatörden Görebilirsiniz !"
+
 
 @app.route('/')
 def home():
