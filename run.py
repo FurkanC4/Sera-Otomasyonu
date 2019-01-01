@@ -9,7 +9,6 @@ app = Flask(__name__)
 @app.route('/my-link/')
 def my_link():
    con =sqlite3.connect("degerler.db");
-   
    cur = con.cursor()
    cur.execute("UPDATE sera SET Durum='Kapalı' WHERE isim='Motor'")
    cur.execute("UPDATE sera SET deger='0' WHERE isim='Motor'")
