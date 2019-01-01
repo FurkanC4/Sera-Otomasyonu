@@ -6,7 +6,7 @@ Sera otomasyonu ile kullanmak isteyen ilgili kişinin serasını web üzerinden 
 
 # Kurulum Ve Kullanım
 İlk olarak run.py adlı dosyayı python üzerinden çalıştırarak web sitemizi localhost:5000 üzerinde aktif ediniz.
-Hemen sonra sera.py dosyasını python üzerinde çalıştırarak EmulatorGUI'yi aktif ediniz. Göreceğiniz üzere emulatör üzerindeki değişiklikler ile web üzerinden sqlite3 ile veri alış-verişi başarıyla sağlanacaktır.
+Hemen sonra sera.py dosyasını python üzerinde çalıştırarak EmulatorGUI'yi aktif ediniz. Göreceğiniz üzere emulatör üzerindeki değişiklikler ile web üzerinden sqlite3 ile veri alış-verişi başarıyla sağlanacaktır. En başta ise images klasörünü localhostunuzun tanımlı olduğu "www" klasörüne atmayı unutmayınız. 
 
 ## Kullanılan Teknolojiler
 - Python
